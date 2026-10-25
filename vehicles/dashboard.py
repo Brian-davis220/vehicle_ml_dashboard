@@ -31,5 +31,6 @@ def manufacturer_chart(df):
         title='Vehicles per Manufacturer',
         text='Count'
     )
+    fig.update_traces(marker_color='#2f3136')
     fig.update_layout(template='plotly_white')
     return opy.plot(fig, auto_open=False, output_type='div')

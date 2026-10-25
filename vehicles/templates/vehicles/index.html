@@ -5,8 +5,19 @@
     <title>Vehicle ML Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        :root {
+            --dark-grey: #2f3136;
+            --mid-grey: #4a4d52;
+            --light-grey: #e9eaec;
+            --white: #ffffff;
+            --red: #dc3545;
+            --green: #28a745;
+            --yellow: #ffc107;
+        }
+
         body {
-            background-color: #f4f6f9;
+            background-color: var(--light-grey);
+            color: var(--dark-grey);
         }
 
         .scrollspy-example {
@@ -15,8 +26,54 @@
             position: relative;
         }
 
-        .nav-pills .nav-link.active {
-            background-color: #0d6efd;
+        h1 {
+            color: var(--dark-grey);
+        }
+
+        /* Sidebar */
+        #dashboard-nav .list-group-item {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            border-color: var(--mid-grey);
+        }
+
+        #dashboard-nav .list-group-item:hover,
+        #dashboard-nav .list-group-item.active {
+            background-color: var(--mid-grey);
+            color: var(--white);
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--white);
+            border: none;
+        }
+
+        .card-header {
+            background-color: var(--dark-grey);
+            color: var(--white);
+        }
+
+        .table thead th {
+            background-color: var(--mid-grey);
+            color: var(--white);
+        }
+
+        /* Action buttons: green = go/confirm, yellow = caution/edit, red = delete/stop */
+        .btn-success {
+            background-color: var(--green);
+            border-color: var(--green);
+        }
+
+        .btn-warning {
+            background-color: var(--yellow);
+            border-color: var(--yellow);
+            color: var(--dark-grey);
+        }
+
+        .btn-danger {
+            background-color: var(--red);
+            border-color: var(--red);
         }
     </style>
 </head>
@@ -36,10 +93,10 @@
             <div class="col-md-9">
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#dashboard-nav"
                     data-bs-smooth-scroll="true" tabindex="0">
-                    <h1 class="text-center text-primary mb-4">Vehicle Machine Learning Dashboard</h1>
+                    <h1 class="text-center mb-4">Vehicle Machine Learning Dashboard</h1>
 
                     <div id="frequency-table" class="card shadow mb-5">
-                        <div class="card-header bg-info text-white">
+                        <div class="card-header">
                             Frequency Tables (One-way)
                         </div>
                         <div class="card-body">
@@ -48,7 +105,7 @@
                     </div>
 
                     <div id="manufacturer-chart" class="card shadow mb-5">
-                        <div class="card-header bg-info text-white">
+                        <div class="card-header">
                             Manufacturer Chart
                         </div>
                         <div class="card-body">
